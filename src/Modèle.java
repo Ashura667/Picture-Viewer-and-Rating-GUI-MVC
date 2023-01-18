@@ -19,6 +19,11 @@ public class Modèle  extends Observable{
 		  } 
 		}
 	}
+	public void sélection(int item) {
+		this.imageSelectionne = item;
+		this.setChanged();
+		this.notifyObservers(this.imagemodelelist.get(this.imageSelectionne));
+	}
 	public static void main(String[] args) {
 		new Modèle();
 	}

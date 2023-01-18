@@ -11,7 +11,9 @@ public class Contrôleur implements ItemListener{
 	@Override
 	public void itemStateChanged(ItemEvent e) {
 		// TODO Auto-generated method stub
-		System.out.println("coucou "+ e);
+		if (e.getSource() instanceof java.awt.List) {
+			this.modèle.sélection((Integer)e.getItem());	
+		} 
 	}
 
 }
