@@ -16,11 +16,13 @@ public class GestionImages extends Frame implements WindowListener, ItemListener
 	public GestionImages() {
 
 		this.setLayout(new BorderLayout());
-
+		
 		AWT_ListeImages panneauGauche = new AWT_ListeImages(this);
 		this.add(panneauGauche, BorderLayout.WEST);
+		Modèle modl = new Modèle();
+		Contrôleur ctrl = new Contrôleur(modl);
 
-		AWT_AfficheurImage panneauDroite = new AWT_AfficheurImage();
+		AWT_AfficheurImage panneauDroite = new AWT_AfficheurImage(modl);
 		this.add(panneauDroite, BorderLayout.EAST);
 
 		AWT_NoteImage panneauBas = new AWT_NoteImage(this);

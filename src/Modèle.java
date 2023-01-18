@@ -1,8 +1,10 @@
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Observable;
 
-public class Modèle {
+public class Modèle  extends Observable{
 	ArrayList<ImageModèle> imagemodelelist;
+	Integer imageSelectionne;
 	
 	public Modèle() {
 		// TODO Auto-generated constructor stub
@@ -12,8 +14,8 @@ public class Modèle {
 		
 		for (int i = 0; i < listOfFiles.length; i++) {
 		  if (listOfFiles[i].isFile()) {
-			  System.out.println(listOfFiles[i].getPath());
-		    this.imagemodelelist.add(new ImageModèle(listOfFiles[i].getName(), listOfFiles[i].getAbsolutePath()));
+		    this.imagemodelelist.add(new ImageModèle(listOfFiles[i].getName()
+		    		, listOfFiles[i].getPath()));
 		  } 
 		}
 	}
